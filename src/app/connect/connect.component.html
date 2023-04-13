@@ -6,24 +6,26 @@
             <div class="row d-flex justify-content-center">
 
                 <div class="col-lg-8 col-md-9 col-sm-12 card border-light mb-3">
+
+                    <h4 class="divider" style="padding: 15px 10px;">Recruiter's List</h4>
                 
-                    <div class="card-body d-flex"
+                    <div class="card-body d-flex flex-wrap"
                         [class.divider]="!last"
                         *ngFor="let recuriter of recuriters; let last = last">
 
                         <a class="job-container">
-                            <img class="person-img" src="https://media.licdn.com/dms/image/D4D03AQGengNJE3MSkQ/profile-displayphoto-shrink_100_100/0/1668122711398?e=1686787200&amp;v=beta&amp;t=oD75RTAqxwuq-IvwbLBFPP66QOBAkmxePb9yDxsHIJ0" 
+                            <img class="person-img" [src]="recuriter.image || '/assets/images/male-16.jpg'" 
                                 loading="lazy">
                         </a>
 
                         <div class="d-flex flex-column job-title">
-                            <h5 class="card-title">Taimour Ali</h5>
-                            <p class="card-text">React Native Developer</p>
+                            <h5 class="card-title">{{recuriter.name}}</h5>
+                            <p class="card-text">{{recuriter.role}}</p>
                         </div>
 
                         <div class="d-flex flex-row justify-content-end align-items-center" style="flex: 1;">
                            <button type="button" class="btn btn-primary">Send Message</button>
-                           <button type="button" class="btn btn-success">Accept</button>
+                           <button type="button" class="btn btn-success">Connect</button>
                         </div>
 
                     </div>

@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ConnectComponent } from './connect/connect.component';
+import { ProfileComponent } from './profile/profile.component';
 
 export const appRoutes: Routes = [
     {
@@ -13,6 +14,9 @@ export const appRoutes: Routes = [
     }, {
         path: 'connect',
         component: ConnectComponent
+    }, {
+        path: 'my-profile',
+        component: ProfileComponent
     }, {
         path: '',
         pathMatch: 'full',

@@ -8,7 +8,7 @@
 
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 			<a class="navbar-brand" href="#">Boggle</a>
-			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0 menu-item">
 				<li class="nav-item" *ngFor="let menuItem of menuItems">
 					<a class="nav-link active" aria-current="page" 
 						[routerLink]="menuItem.link" routerLinkActive="active">{{menuItem.title}}</a>
@@ -24,7 +24,7 @@
 
 				<ul class="dropdown-menu dropdown-menu-dark dropdown-menu-start profile-menu-container" 
 					role="menu" aria-labelledby="profileDp">
-					<li><a class="dropdown-item" href="#">My Profile</a></li>
+					<li><a class="dropdown-item" [routerLink]="'/my-profile'">My Profile</a></li>
 					<li><a class="dropdown-item" href="#">Sign-out</a></li>
 				</ul>
 			</div>

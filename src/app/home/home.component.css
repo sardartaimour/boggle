@@ -11,7 +11,7 @@
 }
 
 .home-bg-img {
-    background: url(/assets/images/back.png);
+    /* background: url(/assets/images/back.png); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;

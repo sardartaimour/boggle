@@ -12,9 +12,9 @@ export class HomeComponent {
   constructor() {
     this.jobs = [
         {
-            title: 'Draw a Polygon shape on React JS',
+            title: 'I am looking for a Google recuriter',
             description: `Hi,
-                I needed some expert to build a solution in react in which we have an image, we
+                I need some expert to build a solution in react in which we have an image, we
                 have to draw a polygon line or polygon shape on the provided image
                 Attaching link below is the example of what we exc=actly want:`
         }, {

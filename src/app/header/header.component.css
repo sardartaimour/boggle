@@ -20,3 +20,9 @@
     width: 135px;
     min-width: 50px !important;
 }
+
+.menu-item {
+    justify-content: flex-end;
+    flex: 1;
+    padding-right: 30px;
+}
