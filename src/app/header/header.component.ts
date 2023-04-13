@@ -8,7 +8,19 @@ import { Router } from '@angular/router';
     styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+
+    menuItems: any[];
     
     constructor() {
+        this.menuItems = [{
+            title: 'Home',
+            link: '/home'
+        }, {
+            title: 'About Us',
+            link: '/about-us'
+        }, {
+            title: 'Connect',
+            link: '/connect'
+        }]
     }
 }
