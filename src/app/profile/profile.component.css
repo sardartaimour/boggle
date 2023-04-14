@@ -8,8 +8,9 @@
 
 .profile-pic-container {
     height: 275px;
-    max-width: 280px;
-    width: 274px;
+    /* max-width: 280px; */
+    /* width: 274px; */
+    width: 100%;
     border-radius: 18px;
     padding: 0;
     margin-bottom: 0;
