@@ -14,13 +14,13 @@ export class HeaderComponent {
     constructor() {
         this.menuItems = [{
             title: 'Home',
-            link: '/home'
+            link: '/main/home'
         }, {
             title: 'About Us',
-            link: '/about-us'
+            link: '/main/about-us'
         }, {
             title: 'Connect',
-            link: '/connect'
+            link: '/main/connect'
         }]
     }
 }
