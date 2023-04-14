@@ -10,6 +10,13 @@ export class AuthService {
    
     users: any[];
 
+    about = `<p>Hey! I'm Taimour, a Full Stack JavaScript developer with experience in building and 
+    maintaining Membership Sites, Affiliate Systems, creating logical UIs, and developing
+    all other manner of web portals/websites and online tools.</p>
+    <p>I've experience building eye-catching sites and practical online tools from scratch and make 
+    a point
+    of ensuring cross-browser compatibility, and fluid responsiveness across devices.</p>`
+
     constructor() {
 
         this.users = [{
@@ -20,12 +27,7 @@ export class AuthService {
             address: 'Islamabad, Pakistan',
             password: '123456',
             name: 'Taimour Ali',
-            about: `<p>Hey! I'm Taimour, a Full Stack JavaScript developer with experience in building and 
-                maintaining Membership Sites, Affiliate Systems, creating logical UIs, and developing
-                all other manner of web portals/websites and online tools.</p>
-                <p>I've experience building eye-catching sites and practical online tools from scratch and make 
-                a point
-                of ensuring cross-browser compatibility, and fluid responsiveness across devices.</p>`
+            about: this.about
         }];
     }
 
@@ -35,6 +37,24 @@ export class AuthService {
 
     isSameEamil(email: string): boolean {
         return this.users.find(u => u.email === email);
+    }
+
+    signup(payload: any): Observable<any> {
+        
+        if (this.isSameEamil(payload.email)) {
+            return of({'error' : 'User with email already exist'});
+        }
+
+        if (this.isSameUser(payload.username)) {
+            return of({'error' : 'Username must be unique'});
+        }
+
+       payload['profile_pic'] = '';
+       payload['about'] = this.about;
+
+       this.users.push(payload);
+
+        return of(true);
     }
 
     login(username: string, password: string): Observable<any> {

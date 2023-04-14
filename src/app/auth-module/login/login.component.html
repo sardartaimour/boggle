@@ -19,21 +19,19 @@
                                     <div class="form-outline mb-3">
                                         <label class="form-label" for="form2Example11">Username</label>
                                         <input type="email" id="form2Example11" class="form-control"
-                                            [class.is-invalid]="isUsernameValid || error"
+                                            [class.is-invalid]="isFormValid('username') || error"
                                             placeholder="Enter username"
                                             [formControlName]="'username'" />
-                                            <div class="invalid-feedback" 
-                                                *ngIf="signInForm?.get('username')?.hasError('required')"> Username is required </div>
+                                            <div class="invalid-feedback" *ngIf="!error"> Username is required </div>
                                             <div class="invalid-feedback" *ngIf="error"> {{error}} </div>
                                     </div>
 
                                     <div class="form-outline mb-3">
                                         <label class="form-label" for="form2Example22">Password</label>
                                         <input type="password" id="form2Example22" class="form-control"
-                                            [class.is-invalid]="(signInForm?.get('password')?.touched || signInForm?.get('password')?.dirty) && signInForm?.get('password')?.hasError('required')"
+                                            [class.is-invalid]="isFormValid('password')"
                                             placeholder="Enter password" [formControlName]="'password'" />
-                                            <div class="invalid-feedback" 
-                                                *ngIf="signInForm?.get('password')?.hasError('required')"> Password is required </div>
+                                            <div class="invalid-feedback"> Password is required </div>
                                     </div>
 
                                     <div class="text-center pt-1 pb-1">
@@ -52,7 +50,7 @@
 
                                     <div class="d-flex">
                                         <p class="mb-0 me-2">Don't have an account?</p>
-                                        <a class="cursor-pointer">Singup</a>
+                                        <a class="cursor-pointer" [routerLink]="['/auth/sign-up']">Singup</a>
                                     </div>
 
                                 </form>

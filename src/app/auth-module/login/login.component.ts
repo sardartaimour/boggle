@@ -52,8 +52,7 @@ export class LoginComponent {
 		}, 2000);
 	}
 
-	get isUsernameValid() {
-		return (this.signInForm?.get('username')?.dirty || this.signInForm?.get('username')?.touched) && this.signInForm?.get('username')?.hasError('required')
+	isFormValid(field: string) {
+		return (this.signInForm?.get(field)?.dirty || this.signInForm?.get(field)?.touched) && this.signInForm?.get(field)?.hasError('required');
 	}
-
 }
