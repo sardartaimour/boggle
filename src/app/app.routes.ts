@@ -3,6 +3,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ConnectComponent } from './connect/connect.component';
 import { ProfileComponent } from './profile/profile.component';
+import { LoginComponent } from './login/login.component';
 
 export const appRoutes: Routes = [
     {
@@ -17,6 +18,9 @@ export const appRoutes: Routes = [
     }, {
         path: 'my-profile',
         component: ProfileComponent
+    }, {
+        path: 'login',
+        component: LoginComponent
     }, {
         path: '',
         pathMatch: 'full',
