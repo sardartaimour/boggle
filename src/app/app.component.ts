@@ -1,31 +1,23 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Boggle';
+   
 
-  id!: string;
-  pwd!: string;
-  visible: boolean = true;
-  visible1: boolean = false;
-  visible2: boolean = false;
+    constructor(private _router: Router) {
 
-  tryToLogin(): void {
-    console.log(this.id, this.pwd);
-    if (this.id == 'Mahamil' && this.pwd == '1234') {
-      this.visible = false;
-      this.visible1 = true;
+        const user = localStorage.getItem('user');
+        if (user) {
+            this._router.navigate(['/main/home']);
+        } else {
+            this._router.navigate(['/auth/login']);
+        }
 
-      
     }
-    else if (this.id == 'Lee' && this.pwd == '1234') {
-      this.visible = false;
-      this.visible2 = true;
-    }
-  }
 }
 

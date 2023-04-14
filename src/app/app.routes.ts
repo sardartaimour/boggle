@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { LayoutComponent } from './main-module/layout/layout.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
 export const appRoutes: Routes = [
@@ -8,12 +9,12 @@ export const appRoutes: Routes = [
 		loadChildren: () => import('./auth-module/auth.module').then(m => m.AuthModule),
     }, {
         path: 'main',
-        // canActivate: [ AuthGuard ],
-        // canActivateChild: [ AuthGuard ],
+        canActivate: [ AuthGuard ],
+        canActivateChild: [ AuthGuard ],
         component: LayoutComponent,
         children: [{
                 path: '',
-                // canLoad: [ AuthGuard ],
+                canLoad: [ AuthGuard ],
                 loadChildren: () => import('./main-module/main.module').then(m => m.MainModule)
             }
         ]

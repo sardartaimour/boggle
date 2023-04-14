@@ -48,10 +48,4 @@ export class AuthService {
 
         return of(true);
     }
-
-    logout(): Observable<any> {
-        localStorage.clear();
-        return of(true);
-    }
-
 }

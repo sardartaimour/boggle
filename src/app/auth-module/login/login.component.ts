@@ -49,7 +49,7 @@ export class LoginComponent {
 				error: (err) => {
 				}
 			});
-		}, 3000);
+		}, 2000);
 	}
 
 	get isUsernameValid() {

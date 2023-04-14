@@ -11,7 +11,9 @@ export class HeaderComponent {
 
     menuItems: any[];
     
-    constructor() {
+    constructor(
+        private _router: Router
+    ) {
         this.menuItems = [{
             title: 'Home',
             link: '/main/home'
@@ -22,5 +24,12 @@ export class HeaderComponent {
             title: 'Connect',
             link: '/main/connect'
         }]
+    }
+
+    signOut() {
+        localStorage.clear();
+        setTimeout(() => {
+            this._router.navigate(['/auth/login']);
+        }, 1000);
     }
 }
