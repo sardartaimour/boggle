@@ -10,10 +10,14 @@ import { Router } from '@angular/router';
 export class HeaderComponent {
 
     menuItems: any[];
+    userProfile: any;
     
     constructor(
         private _router: Router
     ) {
+        const user = localStorage.getItem('user');
+        this.userProfile = user ? JSON.parse(user) : null;
+        
         this.menuItems = [{
             title: 'Home',
             link: '/main/home'

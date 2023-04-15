@@ -19,7 +19,7 @@
 
 				<div class="user-image-cont" id="profileDp"
 					data-bs-toggle="dropdown" aria-expanded="false">
-					<img class="user-image" src="/assets/images/male-16.jpg">
+					<img class="user-image" [src]="userProfile?.profile_pic || '/assets/images/male-16.jpg'">
 				</div>
 
 				<ul class="dropdown-menu dropdown-menu-dark dropdown-menu-start profile-menu-container" 
