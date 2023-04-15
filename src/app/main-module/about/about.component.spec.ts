@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { HomeComponent } from './home.component';
+import { AboutComponent } from './about.component';
 
-describe('HomeComponent', () => {
-  let component: HomeComponent;
-  let fixture: ComponentFixture<HomeComponent>;
+describe('AboutComponent', () => {
+  let component: AboutComponent;
+  let fixture: ComponentFixture<AboutComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
+      declarations: [ AboutComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomeComponent);
+    fixture = TestBed.createComponent(AboutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -23,9 +23,9 @@ describe('HomeComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should display the correct text content', () => {
-    const paragraphElement = fixture.debugElement.query(By.css('p'));
-    expect(paragraphElement.nativeElement.textContent).toContain('home works!');
+  it(`should confirm that 'About Us' title exists`, () => {
+    const paragraphElement = fixture.debugElement.query(By.css('h3'));
+    expect(paragraphElement.nativeElement.textContent).toContain('About Us:');
   });
 
 });

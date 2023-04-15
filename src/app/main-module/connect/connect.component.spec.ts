@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { By } from '@angular/platform-browser';
 import { ConnectComponent } from './connect.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 describe('ConnectComponent', () => {
   let component: ConnectComponent;
@@ -8,7 +9,8 @@ describe('ConnectComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ConnectComponent ]
+      declarations: [ ConnectComponent ],
+      imports: [ ModalModule.forRoot() ]
     })
     .compileComponents();
 
@@ -19,5 +21,10 @@ describe('ConnectComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it(`should confirm 'Recruiter's List' exists`, () => {
+    const paragraphElement = fixture.debugElement.query(By.css('h4'));
+    expect(paragraphElement.nativeElement.textContent).toContain(`Recruiter's List`);
   });
 });

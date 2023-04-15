@@ -23,9 +23,25 @@ describe('HomeComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should display the correct text content', () => {
-    const paragraphElement = fixture.debugElement.query(By.css('p'));
-    expect(paragraphElement.nativeElement.textContent).toContain('home works!');
+  it('should display home image', () => {
+    const imgElement = fixture.debugElement.query(By.css('img'));
+    expect(imgElement.nativeElement.src).toContain('/assets/images/back.png');
+  });
+
+  it(`should display section 'Events'`, () => {
+
+    const fixture = TestBed.createComponent(HomeComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('#event').textContent).toContain('Events');
+  });
+
+  it(`should display section 'News'`, () => {
+
+    const fixture = TestBed.createComponent(HomeComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('#news').textContent).toContain('News');
   });
 
 });

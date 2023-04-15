@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { By } from '@angular/platform-browser';
 import { ProfileComponent } from './profile.component';
 
 describe('ProfileComponent', () => {
@@ -19,5 +19,17 @@ describe('ProfileComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it(`should display 'About Me' section`, () => {
+    const paragraphElement = fixture.debugElement.query(By.css('h3'));
+    expect(paragraphElement.nativeElement.textContent).toContain(`About Me:`);
+  });
+  it(`should display 'Personal Info' section`, () => {
+
+    const fixture = TestBed.createComponent(ProfileComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('#personal-info').textContent).toContain('Personal Info:');
   });
 });

@@ -38,6 +38,7 @@ const routes: Route[] = [
 		LayoutComponent
 	],
 	exports: [
+		HeaderComponent,
 		HomeComponent,
 		LayoutComponent
 	],
