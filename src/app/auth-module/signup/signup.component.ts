@@ -46,7 +46,8 @@ export class SignUpComponent {
 						this._toastrService.error(resp.error, 'Singup Error!');
 						this.signUpForm.enable();
 					} else {
-						this._router.navigate(['/auth/login']);
+						this._toastrService.success('User Register successfully', 'Success');
+						// this._router.navigate(['/auth/login']);
 					}	
 				},
 				error: (err) => {

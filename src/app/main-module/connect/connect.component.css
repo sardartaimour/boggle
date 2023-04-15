@@ -21,3 +21,9 @@
 .divider {
     border-bottom: 1px solid lightgrey;
 }
+
+.pending-invite {
+    border-radius: 20px;
+    padding: 6px 20px;
+    background-color: lightgray;
+}

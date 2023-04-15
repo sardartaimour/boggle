@@ -1,30 +1,41 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+	selector: 'app-home',
+	templateUrl: './home.component.html',
+	styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
 
-  jobs: any[];
+	jobs: any[];
+	news: string[];
+	events: string[];
 
-  constructor() {
-    this.jobs = [
-        {
-            title: 'I am looking for a Google recuriter',
-            description: `Hi,
+	constructor() {
+		this.jobs = [
+			{
+				title: 'I am looking for a Google recuriter',
+				description: `Hi,
                 I need some expert to build a solution in react in which we have an image, we
                 have to draw a polygon line or polygon shape on the provided image
                 Attaching link below is the example of what we exc=actly want:`
-        }, {
-            title: 'Draw a Polygon shape on React JS',
-            description: `Hi,
+			}, {
+				title: 'Draw a Polygon shape on React JS',
+				description: `Hi,
                 I needed some expert to build a solution in react in which we have an image, we
                 have to draw a polygon line or polygon shape on the provided image
                 Attaching link below is the example of what we exc=actly want:`
-        }
-    ]
-  }
+			}
+		];
+
+		this.news = [
+			'Your interest, passion, academic goals',
+			'Your desired programs, universities, and courses'
+		];
+		this.events = [
+			'Your interest, passion, academic goals',
+			'Your desired programs, universities, and courses'
+		];
+	}
 
 }
