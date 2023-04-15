@@ -11,6 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class SignUpComponent {
 
+	error: string;
 	signUpForm: UntypedFormGroup;
 
 	constructor(
@@ -19,6 +20,7 @@ export class SignUpComponent {
 		private _formBuilder: FormBuilder,
 		private _authService: AuthService
 	) {
+		this.error = '';
 		this.signUpForm = this._formBuilder.group({});
 		
 		this.signUpForm.addControl('name', new FormControl(null, [Validators.required]));
@@ -35,6 +37,7 @@ export class SignUpComponent {
 			return;
 		}
 
+		this.error = '';
 		this.signUpForm.disable();
 
 		setTimeout(() => {
@@ -43,11 +46,12 @@ export class SignUpComponent {
 				next: (resp) => {
 					console.log('resp == > ', resp)
 					if (resp && resp.error) {
-						this._toastrService.error(resp.error, 'Singup Error!');
+						// this._toastrService.error(resp.error, 'Singup Error!');
+						this.error = resp.error;
 						this.signUpForm.enable();
 					} else {
-						this._toastrService.success('User Register successfully', 'Success');
-						// this._router.navigate(['/auth/login']);
+						// this._toastrService.success('User Register successfully', 'Success');
+						this._router.navigate(['/auth/login']);
 					}	
 				},
 				error: (err) => {

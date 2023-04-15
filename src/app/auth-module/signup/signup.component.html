@@ -18,7 +18,7 @@
                                         <label class="form-label" for="form2Example11">Full Name</label>
                                         <input type="text" class="form-control"
                                             [class.is-invalid]="isFormValid('name')"
-                                            placeholder="Enter name"
+                                            placeholder="Enter name" id="name"
                                             [formControlName]="'name'" />
                                             <div class="invalid-feedback"> Name is required </div>
                                     </div>
@@ -26,33 +26,35 @@
                                     <div class="form-outline mb-3 col-sm-12 col-lg-5 col-md-5">
                                         <label class="form-label" for="form2Example11">Username</label>
                                         <input type="text" class="form-control"
-                                            [class.is-invalid]="isFormValid('username')"
-                                            placeholder="Enter username"
+                                            [class.is-invalid]="isFormValid('username') || (error && error === 'Username must be unique')"
+                                            placeholder="Enter username"  id="username"
                                             [formControlName]="'username'" />
-                                            <div class="invalid-feedback"> Username is required </div>
+                                            <div class="invalid-feedback" *ngIf="!error"> Username is required </div>
+                                            <div class="invalid-feedback" id="username-error" *ngIf="error && error === 'Username must be unique'"> {{error}} </div>
                                     </div>
             
                                     <div class="form-outline mb-3 col-sm-12 col-lg-5 col-md-5">
                                         <label class="form-label" for="form2Example11">Email</label>
-                                        <input type="email" class="form-control"
-                                            [class.is-invalid]="isFormValid('email') || isFormValid('email', 'email')"
+                                        <input type="email" class="form-control"  id="email"
+                                            [class.is-invalid]="isFormValid('email') || isFormValid('email', 'email') || (error && error === 'User with email already exist')"
                                             placeholder="Enter email"
                                             [formControlName]="'email'" />
-                                            <div class="invalid-feedback"> {{ isFormValid('email', 'email') ? 'Invalid email format' : 'Email is required' }} </div>
+                                            <div class="invalid-feedback" *ngIf="!error"> {{ isFormValid('email', 'email') ? 'Invalid email format' : 'Email is required' }} </div>
+                                            <div class="invalid-feedback" id="email-error" *ngIf="error && error === 'User with email already exist'"> {{error}} </div>
                                     </div>
 
                                     <div class="form-outline mb-3 col-sm-12 col-lg-5 col-md-5">
                                         <label class="form-label" for="form2Example11">Phone</label>
                                         <input type="text" class="form-control"
                                             [class.is-invalid]="isFormValid('phone')"
-                                            placeholder="Enter phone#"
+                                            placeholder="Enter phone#"  id="phone"
                                             [formControlName]="'phone'" />
                                             <div class="invalid-feedback"> Phone# is required </div>
                                     </div>
 
                                     <div class="form-outline mb-3 col-sm-12 col-lg-3 col-md-3">
-                                        <label class="form-label" for="form2Example22">Password</label>
-                                        <input type="password" id="form2Example22" class="form-control"
+                                        <label class="form-label" for="password">Password</label>
+                                        <input type="password" id="password" class="form-control"
                                             [class.is-invalid]="isFormValid('password')"
                                             placeholder="Enter password" [formControlName]="'password'" />
                                             <div class="invalid-feedback"> Password is required </div>
@@ -60,14 +62,14 @@
 
                                     <div class="form-outline mb-3 col-sm-12 col-lg-7 col-md-7">
                                         <label class="form-label" for="form2Example11">Address</label>
-                                        <input type="text" class="form-control"
+                                        <input type="text" class="form-control" id="address"
                                             placeholder="Enter address"
                                             [formControlName]="'address'" />
                                     </div>
 
                                     <div class="text-center pt-1 pb-1 d-flex justify-content-center align-items-center">
                                         <button class="btn btn-primary btn-block fa-lg mb-3 col-sm-12 col-md-3 col-lg-3 d-flex justify-content-center align-items-center"
-                                            type="button" (click)="register()">Register &nbsp;&nbsp;
+                                            type="button" id="register-btn" (click)="register()">Register &nbsp;&nbsp;
 
                                             <div class="spinner-grow" role="status" 
                                                 style="width: 1.5rem; height: 1.5rem;"
