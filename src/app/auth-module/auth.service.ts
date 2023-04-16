@@ -10,23 +10,20 @@ export class AuthService {
    
     users: any[];
 
-    about = `<p>Hey! I'm Taimour, a Full Stack JavaScript developer with experience in building and 
-    maintaining Membership Sites, Affiliate Systems, creating logical UIs, and developing
-    all other manner of web portals/websites and online tools.</p>
-    <p>I've experience building eye-catching sites and practical online tools from scratch and make 
-    a point
-    of ensuring cross-browser compatibility, and fluid responsiveness across devices.</p>`
+    about = `<p> Hey! my name is Mahamil Gadit. I am currently a senior at the University of Florida 
+    looking for jobs. I would like to reach out to specific recruiters at the companies 
+    I would like to work for to get more of an insight on the operations of a company.</p>`
 
     constructor() {
 
         this.users = [{
             profile_pic: '',
-            email: 'taimour@email.com',
-            username: 'taimour',
-            phone: '+92 000 0000 000',
-            address: 'Islamabad, Pakistan',
+            email: 'mgadit@boggle.com',
+            username: 'Mahamil',
+            phone: '352-555-5555',
+            address: '5225 SW 13th St Gainesville Fl, 32607',
             password: '123456',
-            name: 'Taimour Ali',
+            name: 'Mahamil Gadit',
             about: this.about
         }];
     }

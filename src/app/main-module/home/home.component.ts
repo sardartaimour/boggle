@@ -14,17 +14,14 @@ export class HomeComponent {
 	constructor() {
 		this.jobs = [
 			{
-				title: 'I am looking for a Google recuriter',
-				description: `Hi,
-                I need some expert to build a solution in react in which we have an image, we
-                have to draw a polygon line or polygon shape on the provided image
-                Attaching link below is the example of what we exc=actly want:`
+				title: 'Google recuriter',
+				description: ` Hello I am a former senior google sales executive ready to 
+				help you in preparing for interview questions and a career here at google.- 
+				anonymous user`
 			}, {
-				title: 'Draw a Polygon shape on React JS',
-				description: `Hi,
-                I needed some expert to build a solution in react in which we have an image, we
-                have to draw a polygon line or polygon shape on the provided image
-                Attaching link below is the example of what we exc=actly want:`
+				title: 'Microsoft recruiter',
+				description: `Hello I am a junior marketing coordinator here at Microsoft ready to 
+				guide you on an easy application process to a career at Microsoft.`
 			}
 		];
 
