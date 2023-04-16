@@ -23,31 +23,31 @@ export class ConnectComponent {
 			id: 1,
 			name: 'Katlyn Perkins',
 			role: 'Google recruiter',
-			image: '',
+			image: 'https://tse2.mm.bing.net/th?id=OIP.HwTtqc10QA1N0_DX5ruW7QHaEJ&pid=Api&P=0',
 			isInviteSended: true
 		}, {
 			id: 2,
 			name: 'Max Matherson',
 			role: 'Microsoft recruiter',
-			image: '',
+			image: 'https://tse1.mm.bing.net/th?id=OIP.bFNFNtbodjO1HjAk4Ek-1QHaHa&pid=Api&P=0',
 			isInviteSended: false 
 		}, {
 			id: 3,
 			name: 'Steven King',
 			role: 'Amazon tech recruiter',
-			image: '',
+			image: 'https://tse2.mm.bing.net/th?id=OIP.2SvJkiywOojR2PuqiNwN6AHaEK&pid=Api&P=0',
 			isInviteSended: false 
 		}, {
 			id: 4,
 			name: 'Walter Patterson',
 			role: 'Apple recruiter',
-			image: '',
+			image: 'https://tse3.mm.bing.net/th?id=OIP.iDetnmIJeB_t79HZFWpIkAHaE8&pid=Api&P=0',
 			isInviteSended: false 
 		}, {
 			id: 5,
 			name: 'Phillip Anderson',
 			role: 'J.P Morgan Recruiter',
-			image: '',
+			image: 'https://tse3.mm.bing.net/th?id=OIP.eKTBlb4IZ5UuFavcpylTNgAAAA&pid=Api&P=0',
 			isInviteSended: false 
 		}];
 	}
